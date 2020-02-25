@@ -10,7 +10,8 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
-
+            CustomList<int> list = new CustomList<int>();
+            list.AddItem(5);
         }
     }
 }

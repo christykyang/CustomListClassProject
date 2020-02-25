@@ -10,44 +10,77 @@ namespace CustomListProject
     {
         //member variables
         private int count;
-        private int indexLocation;
+        private T[] arrayIndex;
+        //private int indexLocation;
         private int maxCapacity;
+        
         //constructors
+        public CustomList()
+        {
+            count = 0;
+            maxCapacity = 4;
+            arrayIndex = new T[maxCapacity];
+        }
         public int Count
         {
             get
             {
                 return count;
             }
-            set
-            {
-                count = 0;
-            }
         }
-        public int IndexLocation
+        public T this[int index]
         {
             get
             {
-                return indexLocation;
+                return arrayIndex[index];
             }
             set
             {
-                indexLocation = -1;
+                //if (value = )
+                //{
+
+                //}
+                arrayIndex[index] = value;
             }
         }
-        //public int MaxCapacity
-        //{
-            
-        //}
+        public int MaxCapacity
+        {
+            get
+            {
+                return maxCapacity;
+            }
+            set
+            {
+                maxCapacity = 4;
+            }
+        }
         //member methods
         public void AddItem(T item)
         {
             //increment count
-            count++;
+            //count++;
 
             //item needs to land at next available index
-            //indexLocation++;
+            arrayIndex[count] = item;
+            count++;
 
+            //for (int i = 0; i < maxCapacity; i++)
+            //{
+            //    if (maxCapacity <= 3)
+            //    {
+                    
+            //    }
+            //    else
+            //    {
+
+            //    }
+            //}
+            
+            
+            //while (maxCapacity <= 3)
+            //{
+                
+            //}
             //check to make sure it persists
 
 
