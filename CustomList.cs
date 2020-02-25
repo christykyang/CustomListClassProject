@@ -83,8 +83,15 @@ namespace CustomListProject
         {
             //count decreases
             count--;
+            //item index needs to delete 
 
-            //index of item removed, moves over
+            //shift everything following over
+            for (int i = 0; i < count; i++)
+            {
+                arrayIndex[i] = arrayIndex[i + 1];
+            }
+
+            //now concerns are all the values in the array BEFORE the removal
         }
         public void RenameNewArrayAsOldArray()
         {
@@ -96,11 +103,10 @@ namespace CustomListProject
         }
         public void CopyItemsFromOldArraytoNewArray(T[] newArrayIndex, T[] arrayIndex)
         {
-            for (int i = 0; i < maxCapacity / 2; i++)
+            for (int i = 0; i < count; i++)
             {
                 newArrayIndex[i] = arrayIndex[i];
             }
-            
         }
         public void CreateNewArray()
         {

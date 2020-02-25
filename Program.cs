@@ -16,8 +16,9 @@ namespace CustomListProject
             list.AddItem(2);
             list.AddItem(5);
             list.AddItem(8);
+            list.RemoveItem(24);
 
-            Console.WriteLine(list[0]);
+            Console.WriteLine(list[1]);
         }
     }
 }
