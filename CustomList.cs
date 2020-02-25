@@ -11,6 +11,7 @@ namespace CustomListProject
         //member variables
         private int count;
         private T[] arrayIndex;
+        private T[] newArrayIndex;
         //private int indexLocation;
         private int maxCapacity;
         
@@ -57,40 +58,50 @@ namespace CustomListProject
         //member methods
         public void AddItem(T item)
         {
-            //increment count
-            //count++;
-
-            //item needs to land at next available index
-            arrayIndex[count] = item;
-            count++;
-
-            //for (int i = 0; i < maxCapacity; i++)
-            //{
-            //    if (maxCapacity <= 3)
-            //    {
-                    
-            //    }
-            //    else
-            //    {
-
-            //    }
-            //}
-            
-            
-            //while (maxCapacity <= 3)
-            //{
-                
-            //}
-            //check to make sure it persists
-
-
             //count == maxcapacity, we need to increase capacity and copy
+            if (count == maxCapacity)
+            {
+                //increase capacity
+                CreateNewArray();
+                //copy
+                CopyItemsFromOldArraytoNewArray(newArrayIndex);
+                //new array is renamed
+                RenameNewArrayAsOldArray();
+                arrayIndex[count] = item;
+                count++;
+
+            }
+            else
+            {
+                //item needs to land at the next avaliable index
+                //check to make sure it persists
+                arrayIndex[count] = item;
+                //increment count
+                count++;
+            }
         }
         public void RemoveItem(T item)
         {
             //count decreases
 
             //index of item removed list over
+        }
+        public void RenameNewArrayAsOldArray()
+        {
+            arrayIndex = new T[maxCapacity];
+            arrayIndex = newArrayIndex;
+        }
+        public void CopyItemsFromOldArraytoNewArray(Array newArrayIndex)
+        {
+            foreach (T index in arrayIndex)
+            {
+                newArrayIndex = arrayIndex;
+            }
+        }
+        public void CreateNewArray()
+        {
+            maxCapacity = count * 2;
+            newArrayIndex = new T[maxCapacity];
         }
     }
 }
