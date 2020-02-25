@@ -82,8 +82,9 @@ namespace CustomListProject
         public void RemoveItem(T item)
         {
             //count decreases
+            count--;
 
-            //index of item removed list over
+            //index of item removed, moves over
         }
         public void RenameNewArrayAsOldArray()
         {
