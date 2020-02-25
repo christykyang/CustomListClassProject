@@ -17,7 +17,7 @@ namespace CustomListProject
             list.AddItem(5);
             list.AddItem(8);
 
-            //Console.WriteLine(list[0]);
+            Console.WriteLine(list[0]);
         }
     }
 }

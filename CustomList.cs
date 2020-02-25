@@ -64,12 +64,11 @@ namespace CustomListProject
                 //increase capacity
                 CreateNewArray();
                 //copy
-                CopyItemsFromOldArraytoNewArray(newArrayIndex);
+                CopyItemsFromOldArraytoNewArray(newArrayIndex, arrayIndex);
                 //new array is renamed
                 RenameNewArrayAsOldArray();
                 arrayIndex[count] = item;
                 count++;
-
             }
             else
             {
@@ -89,14 +88,18 @@ namespace CustomListProject
         public void RenameNewArrayAsOldArray()
         {
             arrayIndex = new T[maxCapacity];
-            arrayIndex = newArrayIndex;
-        }
-        public void CopyItemsFromOldArraytoNewArray(Array newArrayIndex)
-        {
-            foreach (T index in arrayIndex)
+            foreach (T index in newArrayIndex)
             {
-                newArrayIndex = arrayIndex;
+                arrayIndex = newArrayIndex;
             }
+        }
+        public void CopyItemsFromOldArraytoNewArray(T[] newArrayIndex, T[] arrayIndex)
+        {
+            for (int i = 0; i < maxCapacity / 2; i++)
+            {
+                newArrayIndex[i] = arrayIndex[i];
+            }
+            
         }
         public void CreateNewArray()
         {
