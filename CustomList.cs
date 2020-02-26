@@ -12,15 +12,16 @@ namespace CustomListProject
         private int count;
         private T[] arrayIndex;
         private T[] newArrayIndex;
-        //private int indexLocation;
+        private string indexOutofBounds;
         private int maxCapacity;
-        
+
         //constructors
         public CustomList()
         {
             count = 0;
             maxCapacity = 4;
             arrayIndex = new T[maxCapacity];
+            indexOutofBounds = "Exception: Out of bounds!";
         }
         public int Count
         {
@@ -33,14 +34,14 @@ namespace CustomListProject
         {
             get
             {
+                if (index <= -1)
+                {
+                    Console.WriteLine(indexOutofBounds);
+                }
                 return arrayIndex[index];
             }
             set
             {
-                //if (value = )
-                //{
-
-                //}
                 arrayIndex[index] = value;
             }
         }
@@ -88,10 +89,29 @@ namespace CustomListProject
             //shift everything following over
             for (int i = 0; i < count; i++)
             {
-                arrayIndex[i] = arrayIndex[i + 1];
+                if (item.Equals(arrayIndex[i]))
+                {
+                    arrayIndex[i] = arrayIndex[i + 1];
+                }
+                else
+                {
+                    continue;
+                }
             }
+        }
+        public override string ToString()
+        {
+            string stringResults = "";
 
-            //now concerns are all the values in the array BEFORE the removal
+            for (int i = 0; i < count; i++)
+            {
+                stringResults = arrayIndex[i].ToString();
+            }
+            //foreach (T index in arrayIndex)
+            //{
+            //    stringResults = index.ToString();
+            //}
+            return stringResults.ToString();
         }
         public void RenameNewArrayAsOldArray()
         {
