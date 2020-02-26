@@ -101,17 +101,12 @@ namespace CustomListProject
         }
         public override string ToString()
         {
-            string stringResults = "";
-
+            string stringResult = "";
             for (int i = 0; i < count; i++)
             {
-                stringResults = arrayIndex[i].ToString();
+                stringResult += arrayIndex[i].ToString();
             }
-            //foreach (T index in arrayIndex)
-            //{
-            //    stringResults = index.ToString();
-            //}
-            return stringResults.ToString();
+            return stringResult.ToString();
         }
         public void RenameNewArrayAsOldArray()
         {
