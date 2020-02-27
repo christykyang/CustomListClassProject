@@ -10,15 +10,17 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
-            CustomList<int> list = new CustomList<int>();
-            list.AddItem(24);
-            list.AddItem(30);
-            //list.AddItem(2);
-            //list.AddItem(5);
-            //list.AddItem(8);
-            //list.ToString();
 
-            Console.WriteLine(list.ToString());
+            CustomList<string> stringList1 = new CustomList<string>();
+            stringList1.AddItem("Hello, ");
+            stringList1.AddItem("my ");
+            stringList1.AddItem("name ");
+            stringList1.AddItem("is ");
+            CustomList<string> stringList2 = new CustomList<string>();
+            stringList2.AddItem("Christy");
+            stringList2.AddItem(".");
+
+            Console.WriteLine(stringList1 + stringList2);
         }
     }
 }

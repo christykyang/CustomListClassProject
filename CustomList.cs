@@ -108,6 +108,20 @@ namespace CustomListProject
             }
             return stringResult.ToString();
         }
+        public static CustomList<T> operator +(CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> finalList = new CustomList<T>();
+
+            for (int i = 0; i < list1.Count; i++)
+            {
+                finalList.AddItem(list1[i]);
+            }
+            for (int i = 0; i < list2.Count; i++)
+            {
+                finalList.AddItem(list2[i]);
+            }
+            return finalList;
+        }
         public void RenameNewArrayAsOldArray()
         {
             arrayIndex = new T[maxCapacity];
