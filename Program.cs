@@ -11,16 +11,19 @@ namespace CustomListProject
         static void Main(string[] args)
         {
 
-            CustomList<string> stringList1 = new CustomList<string>();
-            stringList1.AddItem("Hello, ");
-            stringList1.AddItem("my ");
-            stringList1.AddItem("name ");
-            stringList1.AddItem("is ");
-            CustomList<string> stringList2 = new CustomList<string>();
-            stringList2.AddItem("Christy");
-            stringList2.AddItem(".");
+            CustomList<int> numbersList1 = new CustomList<int>();
+            numbersList1.AddItem(24);
+            numbersList1.AddItem(30);
+            numbersList1.AddItem(2);
 
-            Console.WriteLine(stringList1 + stringList2);
+            CustomList<int> numbersList2 = new CustomList<int>();
+            numbersList2.AddItem(2);
+            numbersList2.AddItem(1);
+
+            CustomList<int> finalNumbersList = new CustomList<int>();
+
+            finalNumbersList = numbersList1 - numbersList2;
+            Console.WriteLine(finalNumbersList);
         }
     }
 }
