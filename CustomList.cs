@@ -78,7 +78,15 @@ namespace CustomListProject
                 RenameNewArrayAsOldArray();
                 arrayIndex[count] = item;
                 count++;
-            }
+            }  
+            //else if (maxCapacity > count)
+            //{
+            //    CreateNewMaxCapacityArray();
+            //    CopyItemsFromOldArraytoNewArray(newArrayIndex, arrayIndex);
+            //    RenameNewArrayAsOldArray();
+            //    arrayIndex[count] = item;
+            //    count++;
+            //}
             else
             {
                 //item needs to land at the next avaliable index
@@ -154,8 +162,19 @@ namespace CustomListProject
             }
             return finalList;
         }
-
-
+        public void ZipTwoLists(CustomList<T> list1, CustomList<T> list2)
+        {
+            //CustomList<T> finalList = new CustomList<T>();
+            //int newCount;
+            maxCapacity = list1.Count + list2.Count;
+            newArrayIndex = new T[maxCapacity];
+            //newCount = maxCapacity;
+            for (int i = 0; i < count; i++)
+            {
+                AddItem(list1[i]);
+                AddItem(list2[i]);
+            }
+        }
         public void RenameNewArrayAsOldArray()
         {
             arrayIndex = new T[maxCapacity];

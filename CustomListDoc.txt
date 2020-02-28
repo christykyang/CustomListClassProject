@@ -1,0 +1,42 @@
+Subtraction Overload Opertor
+CustomList<T> operator -{CustomList<T> list1, CustomList<T> list2)
+
+This allows user to subtract one list from another.
+
+Parameters
+items 
+two Custom List objects
+The two list would be instatiated outside of this method.
+
+Returns
+object
+If second item is successfully subtracted from first item, a new object is returned.
+
+Example: the following example will show you how this subtraction overload operator works, by add contents to two separate lists and then subtracting one from the other, by removing the same instances that are in both lists.
+
+        public void SubtractMultipleContents()
+        {
+	    //create two custom lists
+            CustomList<string> numbersList1 = new CustomList<string>();
+	    CustomList<string> numbersList2 = new CustomList<string>();
+	    
+    	    //add items to lists
+            numbersList1.AddItem("See ");
+            numbersList1.AddItem("Spot ");
+            numbersList1.AddItem("run.");
+            numbersList2.AddItem("See ");
+            numbersList2.AddItem("Spot ");
+            numbersList2.AddItem("dig.");
+
+	    //instantiate a new object to take in new contents passing through
+            CustomList<string> finalList = new CustomList<string>();
+
+            //call the new overloaded operator and assign it to new object
+	    //all instances that are in both lists will be dropped and will not pass to the new object
+            finalList = numbersList1 - numbersList2;
+
+	    //return new object
+	    Console.Writeline(finalList);
+        }
+
+Output: "run."
